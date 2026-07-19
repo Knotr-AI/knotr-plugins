@@ -1,6 +1,6 @@
 {
   "name": "knotr-connect",
-  "description": "Connect your Knotr profile to Cursor or Claude Code. Install this bootstrap, then complete Connect on knotr.ai and install your profile plugin for live skills.",
+  "description": "Connect your Knotr profile to Cursor so personal context, skills, and knowledgebases are available via MCP\u2014without re-explaining who you are in every chat.",
   "version": "1.0.0",
   "author": {
     "name": "Knotr",
