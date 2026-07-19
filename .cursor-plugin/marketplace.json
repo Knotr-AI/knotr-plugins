@@ -2,7 +2,7 @@
   "name": "knotr-plugins",
   "owner": {
     "name": "Knotr",
-    "email": "hello@knotr.ai"
+    "email": "info@knotr.ai"
   },
   "metadata": {
     "description": "Official Knotr plugins for Cursor and Claude Code — bootstrap connect, then sync your profile skills from knotr.ai.",
