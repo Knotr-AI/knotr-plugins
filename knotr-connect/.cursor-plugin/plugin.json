@@ -9,6 +9,13 @@
   "homepage": "https://knotr.ai",
   "repository": "https://github.com/Knotr-AI/knotr-plugins",
   "license": "MIT",
-  "keywords": ["mcp", "skills", "knotr", "cursor", "claude", "personal-context"],
-  "logo": "assets/logo.svg"
+  "keywords": [
+    "mcp",
+    "skills",
+    "knotr",
+    "cursor",
+    "claude",
+    "personal-context"
+  ],
+  "logo": "assets/logo.png"
 }

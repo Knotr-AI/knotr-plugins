@@ -5,7 +5,7 @@
     "email": "info@knotr.ai"
   },
   "metadata": {
-    "description": "Official Knotr plugins for Cursor and Claude Code — bootstrap connect, then sync your profile skills from knotr.ai.",
+    "description": "Official Knotr plugins for Cursor and Claude Code \u2014 bootstrap connect, then sync your profile skills from knotr.ai.",
     "version": "1.0.0"
   },
   "plugins": [
@@ -20,10 +20,21 @@
       "homepage": "https://knotr.ai",
       "repository": "https://github.com/Knotr-AI/knotr-plugins",
       "license": "MIT",
-      "keywords": ["mcp", "skills", "knotr", "cursor", "claude", "personal-context"],
-      "logo": "knotr-connect/assets/logo.svg",
+      "keywords": [
+        "mcp",
+        "skills",
+        "knotr",
+        "cursor",
+        "claude",
+        "personal-context"
+      ],
+      "logo": "knotr-connect/assets/logo.png",
       "category": "productivity",
-      "tags": ["mcp", "onboarding", "connect"]
+      "tags": [
+        "mcp",
+        "onboarding",
+        "connect"
+      ]
     }
   ]
 }
