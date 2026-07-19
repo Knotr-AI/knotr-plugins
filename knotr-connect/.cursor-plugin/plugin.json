@@ -1,0 +1,14 @@
+{
+  "name": "knotr-connect",
+  "description": "Connect your Knotr profile to Cursor or Claude Code. Install this bootstrap, then complete Connect on knotr.ai and install your profile plugin for live skills.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Knotr",
+    "email": "hello@knotr.ai"
+  },
+  "homepage": "https://knotr.ai",
+  "repository": "https://github.com/Knotr-AI/knotr-plugins",
+  "license": "MIT",
+  "keywords": ["mcp", "skills", "knotr", "cursor", "claude", "personal-context"],
+  "logo": "assets/logo.svg"
+}
