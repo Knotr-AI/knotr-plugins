@@ -2,62 +2,75 @@
 name: connect-knotr-mcp
 description: >-
   Connect a Knotr profile to Cursor or Claude Code (MCP + profile plugin).
-  Use when the user wants personal context, Knotr skills, or a profile MCP
-  server in their IDE. Guides equal paths: start in Marketplace or knotr.ai
-  Integrations; both finish with Connect and the profile plugin install.
+  Use when the user wants personal context, Knotr skills, knowledgebases, or a
+  profile MCP server in their IDE. Execute the install procedure; do not only
+  explain Integrations to the user.
 ---
 
 # Connect Knotr MCP
 
-This plugin (`knotr-connect`) is a **bootstrap only**. It does **not** replace
-your **profile plugin** (skills, rules, commands synced from your Knotr
-account). Live MCP and profile content stay on [knotr.ai](https://knotr.ai).
+This marketplace plugin is a **bootstrap**. It does not replace the **profile
+plugin** (skills, rules, commands synced from knotr.ai). Credentials and live
+MCP stay on the user’s account.
 
-## Equal paths (same destination)
+## Goal
 
-Users may start in either place:
+Leave the IDE with (1) the profile’s MCP server connected and (2) the profile
+plugin installed locally, then reload.
 
-| Start | Next (shared) |
-|-------|----------------|
-| **IDE:** Install Knotr Connect (this plugin) from Cursor Marketplace or Claude plugin dir | Open profile **Integrations** on knotr.ai → **Connect MCP** → **Install profile plugin** |
-| **In-app:** Profile **Integrations** → Connect Cursor / Claude setup | Same: MCP connected → install profile plugin |
+## Procedure
 
-Canonical steps:
+Detect whether the session is **Cursor** or **Claude Code**, then follow the
+matching branch. Prefer tool calls and terminal commands over narrating steps
+the user must perform manually. Never invent MCP URLs or API keys.
 
-1. Have a Knotr account and profile ([knotr.ai](https://knotr.ai)).
-2. **Connect MCP** for that profile (Integrations).
-3. **Install profile plugin** (agent prompt → `get_ide_plugin_install`, or zip download).
-4. Reload the IDE; refresh later with `knotr-sync` or `bash scripts/sync-knotr-ai-plugin.sh` from the profile plugin root.
+### Shared prechecks
 
-## Cursor
+1. Confirm the user has a knotr.ai account and a target profile. If not, send
+   them to https://knotr.ai to create one, then continue.
+2. Treat profile **Integrations** as the source of truth for Connect links and
+   the exact install prompt (server key is profile-specific).
 
-1. On knotr.ai, open your profile → **Integrations** → **Cursor**.
-2. **Step 1: Connect Cursor** — click **Connect Cursor** (adds this profile’s MCP server; API key is embedded in the link).
-3. **Step 2: Install plugin** — copy the install prompt from Integrations into a Cursor chat. Typical prompt:
+### Cursor
 
-   > Install my Knotr plugin. Call the `get_ide_plugin_install` tool on the `<profile-mcp-server>` MCP server with empty arguments, then run the returned installer script in the terminal. After install, reload the Cursor window.
+1. If this profile’s MCP server is not already available in the session, direct
+   the user to knotr.ai → profile → **Integrations** → **Cursor** →
+   **Connect Cursor** (one-click deeplink embeds the API key). Wait until MCP
+   is connected before installing.
+2. Call `get_ide_plugin_install` on the profile MCP server with empty
+   arguments. The server key matches Integrations (do not guess another
+   server name).
+3. Run the returned installer script in the terminal.
+4. Instruct the user to reload the Cursor window.
+5. Later refreshes: invoke `knotr-sync` from the profile plugin, or run
+   `bash scripts/sync-knotr-ai-plugin.sh` from the profile plugin root, then
+   reload.
 
-   Use the exact prompt shown in Integrations (it includes your MCP server key).
-4. Reload the Cursor window.
-5. To refresh skills after changes on knotr.ai, invoke `knotr-sync` from the profile plugin or run `bash scripts/sync-knotr-ai-plugin.sh` from the profile plugin root, then reload.
+Optional only if the user asks: download the IDE bundle or Cursor rule from
+Integrations Advanced options.
 
-Optional advanced: download the IDE bundle or Cursor rule from Integrations.
+### Claude Code
 
-## Claude Code
+1. If MCP / bundle credentials are not set up, direct the user to knotr.ai →
+   profile → **Integrations** → **Claude Code** → download the **IDE plugin
+   bundle**, unzip it, then from the parent of the plugin root run
+   `claude --plugin-dir ./PLUGIN_FOLDER` (see the bundle README).
+2. Ensure the profile API key env var from `plugin-sync.json` is set (same
+   value as MCP Authorization), or `KNOTR_AI_API_KEY`.
+3. Run `/reload-plugins` after install or sync.
+4. Resync later with `bash scripts/sync-knotr-ai-plugin.sh` from the plugin
+   root.
+5. At session start, call MCP `about-me` for owner context and assistant
+   behavior. Invoke profile skills as `/MANIFEST_NAME:skill-folder-name`
+   (manifest name matches the MCP server key).
 
-1. On knotr.ai, open your profile → **Integrations** → **Claude Code**.
-2. Download and unzip the **IDE plugin bundle**.
-3. From the parent of the plugin root, run: `claude --plugin-dir ./PLUGIN_FOLDER` (see the bundle README).
-4. Set the profile API key env var from `plugin-sync.json` (same as MCP Authorization), or `KNOTR_AI_API_KEY`.
-5. Run `/reload-plugins` after changes; resync with `bash scripts/sync-knotr-ai-plugin.sh` from the plugin root.
-6. Invoke skills as `/MANIFEST_NAME:skill-folder-name` (manifest name matches your MCP server key).
-7. At session start, call MCP `about-me` for full owner context and assistant behavior.
+If `get_ide_plugin_install` is available on the profile MCP server in this
+environment, prefer that installer over a manual zip when it fits the user’s
+setup.
 
-## Agent checklist
+## Hard rules
 
-When helping the user connect:
-
-1. Confirm they have (or create) a knotr.ai profile.
-2. Prefer the in-app Integrations flow for Connect + install prompt (source of truth).
-3. After MCP is connected, install the **profile** plugin via `get_ide_plugin_install` — do not treat this marketplace bootstrap as the profile skill pack.
-4. Do not invent or hard-code API keys or MCP URLs; those come from Integrations / the profile.
+- Do not treat this bootstrap as the user’s profile skill pack.
+- Do not hard-code API keys or MCP base URLs.
+- After MCP is connected, install the **profile** plugin — Connect alone is
+  incomplete.

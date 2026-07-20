@@ -1,28 +1,20 @@
 ---
 name: connect-knotr
-description: Run the Knotr Connect checklist for Cursor or Claude Code (account → Connect MCP → profile plugin → reload).
+description: >-
+  Run the Knotr connect procedure for Cursor or Claude Code (MCP + profile
+  plugin install). Prefer executing tools and installers over explaining UI.
 ---
 
 # Connect Knotr
 
-Complete these steps so Cursor or Claude Code uses the user’s **Knotr profile** MCP and **profile plugin**. This marketplace plugin is only a bootstrap.
+Execute the connect-knotr-mcp skill procedure for this IDE. Bootstrap only —
+finish with the **profile** plugin installed, not this marketplace plugin alone.
 
-## Shared
-
-1. Open [knotr.ai](https://knotr.ai) — sign in and open the target profile.
-2. Go to **Integrations** for that profile.
-3. Connect MCP, then install the **profile** plugin (not this bootstrap alone).
-4. Reload the IDE. Later: `knotr-sync` or `bash scripts/sync-knotr-ai-plugin.sh` from the profile plugin root.
-
-## Cursor branch
-
-1. Integrations → **Cursor** → **Connect Cursor**.
-2. Copy the **Install plugin** prompt into chat (calls `get_ide_plugin_install` on the profile MCP server).
-3. Run the returned installer in the terminal; reload Cursor.
-
-## Claude Code branch
-
-1. Integrations → **Claude Code** → download IDE bundle; unzip.
-2. `claude --plugin-dir ./PLUGIN_FOLDER` from the parent of the plugin root.
-3. Set API key from `plugin-sync.json` (or `KNOTR_AI_API_KEY`).
-4. `/reload-plugins`; call MCP `about-me` at session start.
+1. Confirm knotr.ai profile exists.
+2. Connect profile MCP (Integrations → Connect; do not invent keys/URLs).
+3. Install profile plugin: call `get_ide_plugin_install` when available (Cursor),
+   or use the Integrations IDE bundle path (Claude Code).
+4. Run the installer / `claude --plugin-dir` as returned or documented in the
+   bundle; reload plugins / window.
+5. Later: `knotr-sync` or `bash scripts/sync-knotr-ai-plugin.sh` from the
+   profile plugin root.
