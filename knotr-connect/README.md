@@ -2,7 +2,7 @@
 
 Bootstrap plugin for [Knotr](https://knotr.ai) — connect your profile to **Cursor** or **Claude Code**.
 
-This plugin does **not** ship your profile skills. After Connect, install the **profile plugin** from knotr.ai Integrations (or via `get_ide_plugin_install`) so skills, rules, and MCP stay in sync with your account.
+This plugin does **not** ship your profile skills. After Connect (OAuth MCP), install the **profile plugin** from knotr.ai Integrations (or via `get_ide_plugin_install`) so skills, rules, and MCP stay in sync with your account.
 
 ## Equal install paths (for humans)
 

@@ -17,7 +17,7 @@ You can start in either place; both finish the same way:
 
 The `knotr-connect` skill and command are written for the **agent to execute** (MCP install tool + terminal), not as a human how-to. Human path explanation stays in this README and on knotr.ai Integrations.
 
-Live skills and MCP credentials never live in this public repo. They come from your account via Integrations and the profile IDE bundle.
+Live skills and OAuth MCP credentials never live in this public repo. They come from your account via Integrations (OAuth) and the profile IDE bundle.
 
 ## Install (developers)
 
