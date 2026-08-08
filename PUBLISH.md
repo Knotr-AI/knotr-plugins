@@ -9,11 +9,11 @@
    - `knotr-connect/.claude-plugin/plugin.json`
 2. Commit and push to `main` on [Knotr-AI/knotr-plugins](https://github.com/Knotr-AI/knotr-plugins).
 
-## Cursor Marketplace
+## Distribution
 
 1. Confirm manifests and frontmatter are valid ([plugins reference](https://cursor.com/docs/reference/plugins)).
 2. Test locally (`~/.cursor/plugins/local/` or team marketplace import of this repo).
-3. Submit or update at [cursor.com/marketplace/publish](https://cursor.com/marketplace/publish) with repo URL `https://github.com/Knotr-AI/knotr-plugins` and logo `knotr-connect/assets/logo.svg`.
+3. Push to `main` on [Knotr-AI/knotr-plugins](https://github.com/Knotr-AI/knotr-plugins) so users can clone and install from the repo.
 
 ## Optional community listing
 

@@ -12,8 +12,8 @@ Official [Knotr](https://knotr.ai) plugins for **Cursor** and **Claude Code**.
 
 You can start in either place; both finish the same way:
 
-1. **IDE first** — install **Knotr Connect** from the [Cursor Marketplace](https://cursor.com/marketplace) (or clone this repo / Claude `--plugin-dir`), then open knotr.ai → profile **Integrations** → Connect → install your **profile** plugin.
-2. **App first** — knotr.ai → profile **Integrations** → **Connect Cursor** (or Claude Code setup) → install profile plugin. Optionally install this bootstrap from the Marketplace anytime for the connect skill/command.
+1. **IDE first** — clone this repo and load **Knotr Connect** locally (Cursor) or via Claude `--plugin-dir`, then open knotr.ai → profile **Integrations** → Connect → install your **profile** plugin.
+2. **App first** — knotr.ai → profile **Integrations** → **Connect Cursor** (or Claude Code setup) → install profile plugin. Optionally install this bootstrap from the repo anytime for the connect skill/command.
 
 The `knotr-connect` skill and command are written for the **agent to execute** (MCP install tool + terminal), not as a human how-to. Human path explanation stays in this README and on knotr.ai Integrations.
 
@@ -23,8 +23,12 @@ Live skills and OAuth MCP credentials never live in this public repo. They come 
 
 ### Cursor
 
-- Prefer: [Cursor Marketplace](https://cursor.com/marketplace) → search **Knotr Connect** (after listing).
-- Or clone and load locally under `~/.cursor/plugins/local/` per [Cursor plugins docs](https://cursor.com/docs/plugins).
+Clone this repo and load the plugin locally under `~/.cursor/plugins/local/` per [Cursor plugins docs](https://cursor.com/docs/plugins):
+
+```bash
+git clone https://github.com/Knotr-AI/knotr-plugins.git
+# Then point Cursor at knotr-plugins/knotr-connect (or the repo marketplace manifest)
+```
 
 ### Claude Code
 

@@ -8,7 +8,7 @@ This plugin does **not** ship your profile skills. After Connect (OAuth MCP), in
 
 | Start here | Then |
 |------------|------|
-| Install **Knotr Connect** from Cursor Marketplace / this repo | Open knotr.ai → profile **Integrations** → Connect MCP → install profile plugin |
+| Install **Knotr Connect** from [this repo](https://github.com/Knotr-AI/knotr-plugins) | Open knotr.ai → profile **Integrations** → Connect MCP → install profile plugin |
 | knotr.ai → profile **Integrations** → Connect Cursor / Claude | Same destination: MCP + profile plugin |
 
 ## What’s inside
