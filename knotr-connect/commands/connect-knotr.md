@@ -1,23 +1,22 @@
 ---
 name: connect-knotr
 description: >-
-  Run the Knotr connect procedure for Cursor or Claude Code (OAuth MCP +
-  profile plugin install). Prefer executing tools and installers over
-  explaining UI.
+  Connect Knotr OAuth MCP for Cursor or Claude Code. Prefer executing tools over
+  explaining UI. Profile skills stay on knotr.ai via MCP—do not require a full
+  local skill sync. Optional light profile zip only for rules/behavior.
 ---
 
 # Connect Knotr
 
-Execute the connect-knotr-mcp skill procedure for this IDE. Bootstrap only —
-finish with the **profile** plugin installed, not this marketplace plugin alone.
+Execute the connect-knotr-mcp skill procedure for this IDE.
 
 1. Confirm knotr.ai profile exists.
 2. Connect profile MCP via Integrations → Connect (OAuth; do not invent URLs
-   or tokens).
-3. Install profile plugin: call `get_ide_plugin_install` when available
-   (Cursor — decode `bundle_base64`, unzip, install under
-   `~/.cursor/plugins/local/`), or use the Integrations IDE bundle path
-   (Claude Code).
-4. Complete OAuth if prompted; reload plugins / window.
-5. Later: `knotr-sync` or `bash scripts/sync-knotr-ai-plugin.sh` from the
-   profile plugin root with `KNOTR_AI_OAUTH_TOKEN` set.
+   or tokens). Call **about-me** to verify.
+3. Use knotr-connect domain skills over MCP for skills, knowledge, artifacts,
+   and style (`use-knotr-skills`, `use-knotr-knowledge`, `use-knotr-artifacts`,
+   `use-knotr-style`).
+4. Optional only: light profile zip via `get_ide_plugin_install` (default light)
+   for on-disk rules/behavior—not for bulk skill bodies. Use
+   `bundle_mode: "full"` only if the user asks for every skill on disk.
+5. Reload window / `/reload-plugins` if a profile zip was installed.

@@ -6,18 +6,18 @@ Official [Knotr](https://knotr.ai) plugins for **Cursor** and **Claude Code**.
 
 | Plugin | Purpose |
 |--------|---------|
-| [`knotr-connect`](./knotr-connect) | Bootstrap: connect your Knotr profile (MCP + profile plugin). Complements in-app **Integrations**. |
+| [`knotr-connect`](./knotr-connect) | Connect OAuth MCP + domain skills (skills, knowledge, artifacts, style). Complements in-app **Integrations**. |
 
 ## Equal paths (humans)
 
 You can start in either place; both finish the same way:
 
-1. **IDE first** — clone this repo and load **Knotr Connect** locally (Cursor) or via Claude `--plugin-dir`, then open knotr.ai → profile **Integrations** → Connect → install your **profile** plugin.
-2. **App first** — knotr.ai → profile **Integrations** → **Connect Cursor** (or Claude Code setup) → install profile plugin. Optionally install this bootstrap from the repo anytime for the connect skill/command.
+1. **IDE first** — clone this repo and load **Knotr Connect** locally (Cursor) or via Claude `--plugin-dir`, then open knotr.ai → profile **Integrations** → Connect MCP.
+2. **App first** — knotr.ai → profile **Integrations** → **Connect Cursor** (or Claude Code setup). Install this bootstrap anytime for domain skills/commands.
 
-The `knotr-connect` skill and command are written for the **agent to execute** (MCP install tool + terminal), not as a human how-to. Human path explanation stays in this README and on knotr.ai Integrations.
+The `knotr-connect` skills and commands are written for the **agent to execute**, not as a human how-to. Human path explanation stays in this README and on knotr.ai Integrations.
 
-Live skills and OAuth MCP credentials never live in this public repo. They come from your account via Integrations (OAuth) and the profile IDE bundle.
+Live profile content and OAuth credentials never live in this public repo. They come from your account via Integrations (OAuth MCP). Optional light profile IDE zips (rules/behavior) are separate; bulk skill sync is advanced only.
 
 ## Install (developers)
 
@@ -48,7 +48,7 @@ In the Knotr app: **Skill marketplaces** → add GitHub repo `Knotr-AI/knotr-plu
 ```text
 .cursor-plugin/marketplace.json   # Cursor multi-plugin marketplace
 .claude-plugin/marketplace.json   # Claude Code + Knotr importer
-knotr-connect/                    # Bootstrap plugin
+knotr-connect/                    # Bootstrap + domain workflow plugin
 ```
 
 ## Maintainers
