@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "knotr": {
+      "url": "https://knotr.ai/mcp/v1"
+    }
+  }
+}

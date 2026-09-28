@@ -6,29 +6,26 @@ Official [Knotr](https://knotr.ai) plugins for **Cursor** and **Claude Code**.
 
 | Plugin | Purpose |
 |--------|---------|
-| [`knotr-connect`](./knotr-connect) | Connect OAuth MCP + domain skills (skills, knowledge, artifacts, style). Complements in-app **Integrations**. |
+| [`knotr-connect`](./knotr-connect) | Bundles the Knotr MCP server and domain skills (skills, knowledge, artifacts, style). |
 
-## Equal paths (humans)
+## Install
 
-You can start in either place; both finish the same way:
+Install **Knotr Connect**, then authorize the bundled MCP server. OAuth runs at connect time. This repo does not contain tokens.
 
-1. **IDE first** — clone this repo and load **Knotr Connect** locally (Cursor) or via Claude `--plugin-dir`, then open knotr.ai → profile **Integrations** → Connect MCP.
-2. **App first** — knotr.ai → profile **Integrations** → **Connect Cursor** (or Claude Code setup). Install this bootstrap anytime for domain skills/commands.
-
-The `knotr-connect` skills and commands are written for the **agent to execute**, not as a human how-to. Human path explanation stays in this README and on knotr.ai Integrations.
-
-Live profile content and OAuth credentials never live in this public repo. They come from your account via Integrations (OAuth MCP). Optional light profile IDE zips (rules/behavior) are separate; bulk skill sync is advanced only.
-
-## Install (developers)
+MCP URL: `https://knotr.ai/mcp/v1`
 
 ### Cursor
 
-Clone this repo and load the plugin locally under `~/.cursor/plugins/local/` per [Cursor plugins docs](https://cursor.com/docs/plugins):
+Clone this repo and load the plugin locally under `~/.cursor/plugins/local/` per [Cursor plugins docs](https://cursor.com/docs/plugins), or install it from a marketplace that tracks this repo:
 
 ```bash
 git clone https://github.com/Knotr-AI/knotr-plugins.git
 # Then point Cursor at knotr-plugins/knotr-connect (or the repo marketplace manifest)
 ```
+
+Cursor discovers `knotr-connect/mcp.json` and prompts you to authorize `https://knotr.ai/mcp/v1`. Call **about-me** to confirm the session.
+
+Submit the repo to the official Cursor Marketplace at [cursor.com/marketplace/publish](https://cursor.com/marketplace/publish). Listing on [cursor.directory](https://cursor.directory/plugins/new) is optional.
 
 ### Claude Code
 
@@ -39,21 +36,34 @@ claude --plugin-dir ./knotr-plugins/knotr-connect
 
 Or add this repo as a marketplace that lists `knotr-connect` via `.claude-plugin/marketplace.json`.
 
+Claude Code loads `knotr-connect/.mcp.json` (HTTP, same URL). Authorize when prompted, then call **about-me**.
+
+### Domain skills
+
+After MCP is authorized, these skills stay in the plugin:
+
+- `use-knotr-skills`
+- `use-knotr-knowledge`
+- `use-knotr-artifacts`
+- `use-knotr-style`
+
 ### Import into Knotr
 
-In the Knotr app: **Skill marketplaces** → add GitHub repo `Knotr-AI/knotr-plugins` → sync. Imports draft skills from this marketplace (bootstrap content only).
+In the Knotr app: **Skill marketplaces** → add GitHub repo `Knotr-AI/knotr-plugins` → sync. Imports draft skills from this marketplace.
 
 ## Layout
 
 ```text
 .cursor-plugin/marketplace.json   # Cursor multi-plugin marketplace
 .claude-plugin/marketplace.json   # Claude Code + Knotr importer
-knotr-connect/                    # Bootstrap + domain workflow plugin
+knotr-connect/                    # MCP config + domain skills
+knotr-connect/mcp.json            # Cursor remote MCP (https://knotr.ai/mcp/v1)
+knotr-connect/.mcp.json           # Claude Code remote MCP (same URL)
 ```
 
 ## Maintainers
 
-See [PUBLISH.md](./PUBLISH.md). Keep skill/command copy aligned with knotr.ai Integrations UI (documented in the main app’s `docs/public-knotr-plugins.md`).
+See [PUBLISH.md](./PUBLISH.md).
 
 ## License
 
