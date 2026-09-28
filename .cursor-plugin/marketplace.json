@@ -5,7 +5,7 @@
     "email": "info@knotr.ai"
   },
   "metadata": {
-    "description": "Official Knotr plugins for Cursor and Claude Code. Knotr Connect bundles the Knotr MCP server and domain skills.",
+    "description": "Official Knotr plugins for Cursor. Knotr Connect bundles the Knotr MCP server and domain skills.",
     "version": "1.1.0"
   },
   "plugins": [
@@ -25,7 +25,6 @@
         "skills",
         "knotr",
         "cursor",
-        "claude",
         "personal-context"
       ],
       "logo": "knotr-connect/assets/logo.png",
