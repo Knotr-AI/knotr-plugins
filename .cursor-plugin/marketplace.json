@@ -5,15 +5,15 @@
     "email": "info@knotr.ai"
   },
   "metadata": {
-    "description": "Official Knotr plugins for Cursor and Claude Code \u2014 bootstrap connect, then sync your profile skills from knotr.ai.",
-    "version": "1.0.0"
+    "description": "Official Knotr plugins for Cursor. Knotr Connect bundles the Knotr MCP server and domain skills.",
+    "version": "1.1.0"
   },
   "plugins": [
     {
       "name": "knotr-connect",
       "source": "./knotr-connect",
-      "description": "Connect your Knotr profile to Cursor so personal context, skills, and knowledgebases are available via MCP\u2014without re-explaining who you are in every chat.",
-      "version": "1.0.0",
+      "description": "Use your Knotr profile in Cursor\u2014personal context, skills, and knowledgebases over the bundled MCP server\u2014without re-explaining who you are in every chat.",
+      "version": "1.1.0",
       "author": {
         "name": "Knotr"
       },
@@ -25,7 +25,6 @@
         "skills",
         "knotr",
         "cursor",
-        "claude",
         "personal-context"
       ],
       "logo": "knotr-connect/assets/logo.png",

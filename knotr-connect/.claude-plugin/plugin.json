@@ -1,7 +1,7 @@
 {
   "name": "knotr-connect",
-  "description": "Connect Knotr OAuth MCP and use domain skills for profile skills, knowledgebases, artifacts, and style checks\u2014without bulk-syncing every skill locally.",
-  "version": "1.0.0",
+  "description": "Bundles the Knotr MCP server for Claude Code at https://knotr.ai/mcp/v1 and domain skills for profile skills, knowledgebases, artifacts, and style.",
+  "version": "1.1.0",
   "author": {
     "name": "Knotr"
   }

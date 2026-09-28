@@ -1,7 +1,7 @@
 {
   "name": "knotr-plugins",
-  "version": "1.0.0",
-  "description": "Official Knotr plugins for Cursor and Claude Code \u2014 bootstrap connect, then sync your profile skills from knotr.ai.",
+  "version": "1.1.0",
+  "description": "Official Knotr plugins for Claude Code. Knotr Connect bundles the Knotr MCP server and domain skills.",
   "owner": {
     "name": "Knotr",
     "email": "info@knotr.ai"
@@ -10,8 +10,8 @@
     {
       "name": "knotr-connect",
       "source": "./knotr-connect",
-      "description": "Connect your Knotr profile to Cursor so personal context, skills, and knowledgebases are available via MCP\u2014without re-explaining who you are in every chat.",
-      "version": "1.0.0",
+      "description": "Use your Knotr profile in Claude Code\u2014personal context, skills, and knowledgebases over the bundled MCP server\u2014without re-explaining who you are in every chat.",
+      "version": "1.1.0",
       "category": "productivity"
     }
   ]
