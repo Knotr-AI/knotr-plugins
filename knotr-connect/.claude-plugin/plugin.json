@@ -9,5 +9,6 @@
   "homepage": "https://knotr.ai",
   "repository": "https://github.com/Knotr-AI/knotr-plugins",
   "license": "MIT",
+  "privacyPolicyUrl": "https://knotr.ai/legal/privacy",
   "icon": "assets/logo.png"
 }
