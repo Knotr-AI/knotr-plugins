@@ -1,5 +1,6 @@
 {
   "name": "knotr-connect",
+  "displayName": "Knotr",
   "description": "Bundles the Knotr MCP server for Claude Code at https://knotr.ai/mcp/v1 and domain skills for profile skills, knowledgebases, artifacts, and style.",
   "version": "1.1.1",
   "author": {
@@ -10,5 +11,12 @@
   "repository": "https://github.com/Knotr-AI/knotr-plugins",
   "license": "MIT",
   "privacyPolicyUrl": "https://knotr.ai/legal/privacy",
+  "keywords": [
+    "mcp",
+    "skills",
+    "personal-context",
+    "writing",
+    "publishing"
+  ],
   "icon": "assets/logo.png"
 }
