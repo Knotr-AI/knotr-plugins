@@ -25,8 +25,6 @@ git clone https://github.com/Knotr-AI/knotr-plugins.git
 
 Cursor discovers `knotr-connect/mcp.json` and prompts you to authorize `https://knotr.ai/mcp/v1`. Call **about-me** to confirm the session.
 
-Submit the repo to the official Cursor Marketplace at [cursor.com/marketplace/publish](https://cursor.com/marketplace/publish). Listing on [cursor.directory](https://cursor.directory/plugins/new) is optional.
-
 ### Claude Code
 
 ```bash
@@ -60,6 +58,17 @@ knotr-connect/                    # MCP config + domain skills
 knotr-connect/mcp.json            # Cursor remote MCP (https://knotr.ai/mcp/v1)
 knotr-connect/.mcp.json           # Claude Code remote MCP (same URL)
 ```
+
+## Privacy and support
+
+This repo only ships plugin config and skills. Profile data, knowledgebases, artifacts, and OAuth tokens live on knotr.ai (or in your client), not in this repository.
+
+- Privacy: [https://knotr.ai/legal/privacy](https://knotr.ai/legal/privacy)
+- Terms: [https://knotr.ai/legal/terms](https://knotr.ai/legal/terms)
+- Support: [https://knotr.ai/support](https://knotr.ai/support) · `support@knotr.ai`
+- Product: [https://knotr.ai](https://knotr.ai)
+
+Plugin-level disclosure (what MCP runs and sends): [`knotr-connect/README.md`](./knotr-connect/README.md).
 
 ## Maintainers
 
