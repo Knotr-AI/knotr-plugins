@@ -1,12 +1,13 @@
 # Knotr plugins
 
-Official [Knotr](https://knotr.ai) plugins for **Cursor** and **Claude Code**.
+Official [Knotr](https://knotr.ai) plugins for **Cursor**, **Claude Code**, and the **ChatGPT / Codex** plugin directory.
 
 ## Plugins
 
 | Plugin | Purpose |
 |--------|---------|
-| [`knotr-connect`](./knotr-connect) | Bundles the Knotr MCP server and domain skills (skills, knowledge, artifacts, style). |
+| [`knotr-connect`](./knotr-connect) | Cursor and Claude Code: Knotr MCP server and domain skills (skills, knowledge, artifacts, style). |
+| [`knotr`](./knotr) | ChatGPT and Codex directory ZIP. Reuses the same MCP URL, logo, and domain skills. |
 
 ## Install
 
@@ -54,10 +55,23 @@ In the Knotr app: **Skill marketplaces** → add GitHub repo `Knotr-AI/knotr-plu
 ```text
 .cursor-plugin/marketplace.json   # Cursor multi-plugin marketplace
 .claude-plugin/marketplace.json   # Claude Code + Knotr importer
-knotr-connect/                    # MCP config + domain skills
+knotr-connect/                    # Cursor + Claude MCP config and domain skills
 knotr-connect/mcp.json            # Cursor remote MCP (https://knotr.ai/mcp/v1)
 knotr-connect/.mcp.json           # Claude Code remote MCP (same URL)
+knotr/                            # ChatGPT + Codex plugin root (zip this)
+knotr/plugin.json                 # Agent Plugins manifest and listing metadata
+knotr/mcp.json                    # streamable-http MCP (https://knotr.ai/mcp/v1)
 ```
+
+### ChatGPT and Codex
+
+[`knotr/`](./knotr) is the upload package for the plugin directory. It does not change how Cursor or Claude Code load `knotr-connect`.
+
+```bash
+./scripts/zip-openai-plugin.sh
+```
+
+Upload `dist/knotr-plugin-1.1.1.zip` at [platform.openai.com/plugins](https://platform.openai.com/plugins). The archive root is the plugin (`plugin.json` at the top). The script expands the skill and logo symlinks and does not put secrets in the ZIP. Details: [PUBLISH.md](./PUBLISH.md).
 
 ## Privacy and support
 

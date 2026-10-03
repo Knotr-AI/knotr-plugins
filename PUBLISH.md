@@ -9,11 +9,39 @@
    - `knotr-connect/.claude-plugin/plugin.json`
 2. Commit and push to `main` on [Knotr-AI/knotr-plugins](https://github.com/Knotr-AI/knotr-plugins).
 
+The ChatGPT and Codex package is versioned on its own in `knotr/plugin.json`. Do not bump the Cursor or Claude manifests when only that package changes. `./scripts/zip-openai-plugin.sh` names the ZIP from `knotr/plugin.json`.
+
 ## Distribution
 
 1. Confirm manifests and frontmatter are valid ([plugins reference](https://cursor.com/docs/reference/plugins)).
 2. Test locally (`~/.cursor/plugins/local/` or a team marketplace import of this repo): install the plugin, authorize MCP at `https://knotr.ai/mcp/v1`, call `about-me`, and confirm the domain skills are still present.
 3. Push to `main` on [Knotr-AI/knotr-plugins](https://github.com/Knotr-AI/knotr-plugins).
+
+## ChatGPT and Codex plugin directory
+
+The upload root is [`knotr/`](./knotr), not the git repository root and not `knotr-connect/`. Cursor still reads `knotr-connect/mcp.json`. Claude Code still reads `knotr-connect/.mcp.json`. Those files stay in their existing shapes.
+
+`knotr/skills/` and `knotr/assets/logo.png` are symlinks to `knotr-connect`. Change the domain skills in `knotr-connect/skills/`.
+
+From the repository root:
+
+```bash
+./scripts/zip-openai-plugin.sh
+```
+
+This writes `dist/knotr-plugin-<version>.zip`. The ZIP root contains `plugin.json`, `mcp.json`, `skills/`, and `assets/logo.png`. Symlinks are expanded to real files. `knotr/README.md` is left out. The script refuses to pack `.app.json`, `apps/`, `hooks/`, reviewer credential fields, or a `demo_recording_url`.
+
+Upload the ZIP on the existing plugin at [platform.openai.com/plugins](https://platform.openai.com/plugins) (**Upload plugin to make changes**). Do not commit the ZIP or any token.
+
+`review.demo_recording_url` is omitted. Add a real walkthrough URL in the dashboard, or in a later package, when a recording exists. Do not invent one.
+
+Still enter these in the dashboard. They are not in the ZIP:
+
+- Reviewer credentials and sign-in instructions (dedicated test account, login URL, sample data). The form rejects `test_credentials` and `reviewer_instructions` in package metadata.
+- The video walkthrough URL, until a recording exists.
+- MCP connect for `https://knotr.ai/mcp/v1`: domain-verification token and OAuth. Only one MCP server can be connected.
+- Verified developer identity for the directory publisher name.
+- Submit-for-review policy attestations.
 
 ## Cursor Marketplace
 
@@ -29,6 +57,7 @@ The bundled MCP URL is `https://knotr.ai/mcp/v1` (OAuth at connect time; no toke
 
 - `knotr-connect/mcp.json` (Cursor)
 - `knotr-connect/.mcp.json` (Claude Code)
+- `knotr/mcp.json` (ChatGPT and Codex)
 - `knotr-connect/commands/connect-knotr.md`
 - Root and plugin READMEs
 
