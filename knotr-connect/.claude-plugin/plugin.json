@@ -2,7 +2,7 @@
   "name": "knotr-connect",
   "displayName": "Knotr",
   "description": "Bundles the Knotr MCP server for Claude Code at https://knotr.ai/mcp/v1 and domain skills for profile skills, knowledgebases, artifacts, and style.",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "author": {
     "name": "Knotr",
     "email": "info@knotr.ai"
