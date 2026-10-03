@@ -71,7 +71,7 @@ knotr/mcp.json                    # streamable-http MCP (https://knotr.ai/mcp/v1
 ./scripts/zip-openai-plugin.sh
 ```
 
-Upload `dist/knotr-plugin-1.1.0.zip` at [platform.openai.com/plugins](https://platform.openai.com/plugins). The archive root is the plugin (`plugin.json` at the top). The script expands the skill and logo symlinks and does not put secrets in the ZIP. Details: [PUBLISH.md](./PUBLISH.md).
+Upload `dist/knotr-plugin-1.1.1.zip` at [platform.openai.com/plugins](https://platform.openai.com/plugins). The archive root is the plugin (`plugin.json` at the top). The script expands the skill and logo symlinks and does not put secrets in the ZIP. Details: [PUBLISH.md](./PUBLISH.md).
 
 ## Privacy and support
 
