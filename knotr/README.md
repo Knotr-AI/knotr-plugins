@@ -25,6 +25,6 @@ From the repository root:
 ./scripts/zip-openai-plugin.sh
 ```
 
-That writes `dist/knotr-plugin-1.2.0.zip`. The archive root is the plugin (`plugin.json` at the top), with symlinks expanded to real files. The script leaves this README out of the ZIP. It does not read or embed secrets.
+That writes `dist/knotr-plugin-1.1.0.zip`. The archive root is the plugin (`plugin.json` at the top), with symlinks expanded to real files. The script leaves this README out of the ZIP. It does not read or embed secrets.
 
 Upload that ZIP at [platform.openai.com/plugins](https://platform.openai.com/plugins) with **Upload plugin to make changes** on the migrated plugin. See [PUBLISH.md](../PUBLISH.md).

@@ -6,14 +6,14 @@
   },
   "metadata": {
     "description": "Official Knotr plugins for Cursor. Knotr Connect bundles the Knotr MCP server and domain skills.",
-    "version": "1.2.0"
+    "version": "1.1.1"
   },
   "plugins": [
     {
       "name": "knotr-connect",
       "source": "./knotr-connect",
       "description": "Use your Knotr profile in Cursor: personal context, skills, and knowledgebases over the bundled MCP server, without re-explaining who you are in every chat.",
-      "version": "1.2.0",
+      "version": "1.1.1",
       "author": {
         "name": "Knotr"
       },

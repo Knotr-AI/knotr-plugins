@@ -7,9 +7,9 @@
    - `.claude-plugin/marketplace.json`
    - `knotr-connect/.cursor-plugin/plugin.json`
    - `knotr-connect/.claude-plugin/plugin.json`
-   - `knotr/plugin.json` (ChatGPT and Codex directory package)
-2. Rebuild the directory ZIP after a `knotr/` change: `./scripts/zip-openai-plugin.sh`. The script reads the version from `knotr/plugin.json`.
-3. Commit and push to `main` on [Knotr-AI/knotr-plugins](https://github.com/Knotr-AI/knotr-plugins).
+2. Commit and push to `main` on [Knotr-AI/knotr-plugins](https://github.com/Knotr-AI/knotr-plugins).
+
+The ChatGPT and Codex package is versioned on its own in `knotr/plugin.json`. Do not bump the Cursor or Claude manifests when only that package changes. `./scripts/zip-openai-plugin.sh` names the ZIP from `knotr/plugin.json`.
 
 ## Distribution
 

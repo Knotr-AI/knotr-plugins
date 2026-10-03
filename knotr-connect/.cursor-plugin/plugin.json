@@ -1,7 +1,7 @@
 {
   "name": "knotr-connect",
   "description": "Bundles the Knotr MCP server for Cursor at https://knotr.ai/mcp/v1 and domain skills for profile skills, knowledgebases, artifacts, and style.",
-  "version": "1.2.0",
+  "version": "1.1.1",
   "author": {
     "name": "Knotr",
     "email": "info@knotr.ai"

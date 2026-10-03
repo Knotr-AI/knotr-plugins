@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "knotr",
-  "version": "1.2.0",
+  "version": "1.1.0",
   "description": "Use your Knotr profile in ChatGPT and Codex: personal context, skills, knowledgebases, artifacts, and style over the Knotr MCP server.",
   "author": {
     "name": "Knotr",
@@ -102,7 +102,7 @@
         "commerce_description": "This plugin does not sell products or process payments."
       },
       "publication": {
-        "release_notes": "1.2.0 adds the ChatGPT and Codex directory package: listing metadata, the existing domain skills, and review cases for the Knotr MCP server at https://knotr.ai/mcp/v1."
+        "release_notes": "1.1.0 adds the ChatGPT and Codex directory package: listing metadata, the existing domain skills, and review cases for the Knotr MCP server at https://knotr.ai/mcp/v1."
       }
     }
   }

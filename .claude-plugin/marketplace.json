@@ -1,6 +1,6 @@
 {
   "name": "knotr-plugins",
-  "version": "1.2.0",
+  "version": "1.1.1",
   "description": "Official Knotr plugins for Claude Code. Knotr Connect bundles the Knotr MCP server and domain skills.",
   "owner": {
     "name": "Knotr",
@@ -11,7 +11,7 @@
       "name": "knotr-connect",
       "source": "./knotr-connect",
       "description": "Use your Knotr profile in Claude Code: personal context, skills, and knowledgebases over the bundled MCP server, without re-explaining who you are in every chat.",
-      "version": "1.2.0",
+      "version": "1.1.1",
       "category": "productivity",
       "icon": "knotr-connect/assets/logo.png"
     }
