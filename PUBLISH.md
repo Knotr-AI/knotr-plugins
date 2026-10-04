@@ -25,20 +25,27 @@ The upload root is [`knotr/`](./knotr), not the git repository root and not `kno
 
 From the repository root:
 
+OpenAI requires `review.demo_recording_url` in the uploaded package before submit-for-review. Keep that URL (and any other non-public package fields) out of git:
+
 ```bash
+cp knotr/plugin.local.json.example knotr/plugin.local.json
+# edit demo_recording_url to a reviewer-accessible walkthrough
 ./scripts/zip-openai-plugin.sh
 ```
 
-This writes `dist/knotr-plugin-<version>.zip`. The ZIP root contains `plugin.json`, `mcp.json`, `skills/`, and `assets/logo.png`. Symlinks are expanded to real files. `knotr/README.md` is left out. The script refuses to pack `.app.json`, `apps/`, `hooks/`, reviewer credential fields, or a `demo_recording_url`.
+`knotr/plugin.local.json` is gitignored. The zip script deep-merges it into the committed `knotr/plugin.json` only in the staging copy. You can also pass a one-off URL:
 
-Upload the ZIP on the existing plugin at [platform.openai.com/plugins](https://platform.openai.com/plugins) (**Upload plugin to make changes**). Do not commit the ZIP or any token.
+```bash
+KNOTR_DEMO_RECORDING_URL='https://…' ./scripts/zip-openai-plugin.sh
+```
 
-`review.demo_recording_url` is omitted. Add a real walkthrough URL in the dashboard, or in a later package, when a recording exists. Do not invent one.
+This writes `dist/knotr-plugin-<version>.zip`. The ZIP root contains `plugin.json`, `mcp.json`, `skills/`, and `assets/logo.png`. Symlinks are expanded to real files. `knotr/README.md` and `plugin.local.json*` are left out. The script refuses to pack `.app.json`, `apps/`, `hooks/`, `test_credentials`, or `reviewer_instructions`.
 
-Still enter these in the dashboard. They are not in the ZIP:
+Upload the ZIP on the existing plugin at [platform.openai.com/plugins](https://platform.openai.com/plugins) (**Upload plugin to make changes**). Do not commit the ZIP, `plugin.local.json`, or any token.
+
+Still enter these in the dashboard. They are not allowed in the ZIP:
 
 - Reviewer credentials and sign-in instructions (dedicated test account, login URL, sample data). The form rejects `test_credentials` and `reviewer_instructions` in package metadata.
-- The video walkthrough URL, until a recording exists.
 - MCP connect for `https://knotr.ai/mcp/v1`: domain-verification token and OAuth. Only one MCP server can be connected.
 - Verified developer identity for the directory publisher name.
 - Submit-for-review policy attestations.

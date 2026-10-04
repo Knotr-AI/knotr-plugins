@@ -1,0 +1,9 @@
+{
+  "extensions": {
+    "com.openai": {
+      "review": {
+        "demo_recording_url": "https://example.com/path/to/reviewer-accessible-walkthrough"
+      }
+    }
+  }
+}

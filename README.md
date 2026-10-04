@@ -68,10 +68,11 @@ knotr/mcp.json                    # streamable-http MCP (https://knotr.ai/mcp/v1
 [`knotr/`](./knotr) is the upload package for the plugin directory. It does not change how Cursor or Claude Code load `knotr-connect`.
 
 ```bash
+cp knotr/plugin.local.json.example knotr/plugin.local.json  # gitignored; set demo_recording_url
 ./scripts/zip-openai-plugin.sh
 ```
 
-Upload `dist/knotr-plugin-1.1.1.zip` at [platform.openai.com/plugins](https://platform.openai.com/plugins). The archive root is the plugin (`plugin.json` at the top). The script expands the skill and logo symlinks and does not put secrets in the ZIP. Details: [PUBLISH.md](./PUBLISH.md).
+Upload `dist/knotr-plugin-1.1.1.zip` at [platform.openai.com/plugins](https://platform.openai.com/plugins). The archive root is the plugin (`plugin.json` at the top). The script expands symlinks, merges the local overlay for review-only fields, and rejects dashboard-only credential fields. Details: [PUBLISH.md](./PUBLISH.md).
 
 ## Privacy and support
 
